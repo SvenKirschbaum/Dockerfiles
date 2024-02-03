@@ -1,5 +1,28 @@
 {
   "extends": [
     "github>fallobst22/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "paths": [
+        "keycloak/**"
+      ],
+      "labels": ["keycloak"],
+      "additionalBranchPrefix": "keycloak-"
+    },
+    {
+      "paths": [
+        "nginx-static/**"
+      ],
+      "labels": ["nginx-static"],
+      "additionalBranchPrefix": "nginx-static-"
+    },
+    {
+      "paths": [
+        "teamcity-agent/**"
+      ],
+      "labels": ["teamcity-agent"],
+      "additionalBranchPrefix": "teamcity-agent-"
+    }
   ]
 }
