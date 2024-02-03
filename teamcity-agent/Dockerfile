@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:2023.11.2-linux-sudo
+FROM jetbrains/teamcity-agent:2023.11.3-linux-sudo@sha256:3f6a2a4e7782773f2a17569a7e4cf535352510c04e6245591dcccd909325114c
 USER root
 # Update docker from here, because the currently provided version (19) dosnt work with debian bullseye cgroups2
 RUN curl -sL https://apt.corretto.aws/corretto.key | apt-key add - && \

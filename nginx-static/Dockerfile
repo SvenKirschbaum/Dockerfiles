@@ -1,4 +1,4 @@
-FROM alpine AS build
+FROM alpine:3.19.1@sha256:6457d53fb065d6f250e1504b9bc42d5b6c65941d57532c072d929dd0628977d0 AS build
 
 WORKDIR /build
 
@@ -74,7 +74,7 @@ RUN MODULEARGS=$(ls /build/modules/ | sed -e 's/^/--add-module=\/build\/modules\
         && make -j install
 
 #Final Container
-FROM alpine
+FROM alpine:3.19.1@sha256:6457d53fb065d6f250e1504b9bc42d5b6c65941d57532c072d929dd0628977d0
 
 #Install runtime dependencies, create user/group and create directories
 RUN apk --no-cache add pcre && mkdir -p /var/lib/nginx && mkdir -p /etc/nginx/conf.d;
