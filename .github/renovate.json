@@ -23,6 +23,11 @@
       ],
       "labels": ["teamcity-agent"],
       "additionalBranchPrefix": "teamcity-agent-"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["jetbrains/teamcity-agent"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?(?:-(?<compatibility>[\\w-]*))?$"
     }
   ]
 }
