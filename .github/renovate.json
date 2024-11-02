@@ -4,29 +4,39 @@
   ],
   "packageRules": [
     {
-      "paths": [
+      "matchFileNames": [
         "keycloak/**"
       ],
-      "labels": ["keycloak"],
+      "labels": [
+        "keycloak"
+      ],
       "additionalBranchPrefix": "keycloak-"
     },
     {
-      "paths": [
+      "matchFileNames": [
         "nginx-static/**"
       ],
-      "labels": ["nginx-static"],
+      "labels": [
+        "nginx-static"
+      ],
       "additionalBranchPrefix": "nginx-static-"
     },
     {
-      "paths": [
+      "matchFileNames": [
         "teamcity-agent/**"
       ],
-      "labels": ["teamcity-agent"],
+      "labels": [
+        "teamcity-agent"
+      ],
       "additionalBranchPrefix": "teamcity-agent-"
     },
     {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["jetbrains/teamcity-agent"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "jetbrains/teamcity-agent"
+      ],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?(?:-(?<compatibility>[\\w-]*))?$"
     }
   ]
