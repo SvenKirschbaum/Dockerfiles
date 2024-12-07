@@ -24,6 +24,7 @@ RUN <<'eot' bash
         if [[ -f "$agent_log" ]]; then
           if grep -q "Exit for upgrade" $agent_log || grep -q "The upgrade is complete" $agent_log; then
             echo "Agent upgrade complete"
+            sleep 30
             return 0
           fi
         fi
