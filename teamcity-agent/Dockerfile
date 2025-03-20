@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:2024.12.3-linux-sudo@sha256:4ec706b9b8360368659401eeef2deb136cdf340f31dea0ba024d8416425adcf5
+FROM jetbrains/teamcity-agent:2025.03-linux-sudo@sha256:d9820aab9447e0d835f480cfaa9f6f0191770984fb776ecc647f3bdaa2d38757
 USER root
 RUN curl -sL https://apt.corretto.aws/corretto.key | apt-key add - && \
     add-apt-repository --yes 'deb https://apt.corretto.aws stable main' && \
