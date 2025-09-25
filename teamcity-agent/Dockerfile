@@ -3,12 +3,12 @@ USER root
 RUN curl -sL https://apt.corretto.aws/corretto.key | apt-key add - && \
     add-apt-repository --yes 'deb https://apt.corretto.aws stable main' && \
     curl -sL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | apt-key add - && \
-    add-apt-repository --yes 'deb https://deb.nodesource.com/node_20.x nodistro main' && \
+    add-apt-repository --yes 'deb https://deb.nodesource.com/node_24.x nodistro main' && \
     add-apt-repository --yes ppa:longsleep/golang-backports && \
-    apt-get install -y golang-go nodejs zip java-21-amazon-corretto-jdk make && \
+    apt-get install -y golang-go nodejs zip java-25-amazon-corretto-jdk make && \
     echo '{ "mtu": 1400 }' > /etc/docker/daemon.json
 USER buildagent
-ENV JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto
+ENV JAVA_HOME=/usr/lib/jvm/java-25-amazon-corretto
 
 
 RUN <<'eot' bash
