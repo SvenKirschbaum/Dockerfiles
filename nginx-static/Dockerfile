@@ -84,7 +84,7 @@ COPY --from=build /usr/local/nginx /usr/local/nginx
 COPY --from=build /etc/nginx /etc/nginx
 
 RUN echo -e "\
-worker_processes 1;\
+worker_processes 4;\
 events {\
   worker_connections 1024;\
 }\
