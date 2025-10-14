@@ -9,6 +9,7 @@ RUN curl -sL https://apt.corretto.aws/corretto.key | apt-key add - && \
     echo '{ "mtu": 1400 }' > /etc/docker/daemon.json
 USER buildagent
 ENV JAVA_HOME=/usr/lib/jvm/java-25-amazon-corretto
+ENV JDK_HOME=/usr/lib/jvm/java-25-amazon-corretto
 
 
 RUN <<'eot' bash
