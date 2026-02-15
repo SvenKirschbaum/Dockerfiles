@@ -4,14 +4,12 @@ WORKDIR /build
 
 #Install build dependencies
 RUN apk update && \
-    apk add git mercurial curl g++ make linux-headers pcre-dev zlib-dev perl
+    apk add git curl g++ make linux-headers pcre-dev zlib-dev perl
 
 #Clone nginx repo and switch to latest version
-RUN hg clone https://hg.nginx.org/nginx/ \
-        && hg pull -R nginx \
-        && hg update -R nginx \
-        && REV=$(hg tags -R nginx | grep -o ^release-[0-9\.]* | sort -V | tail -n 1) \
-        && hg update -R nginx -r $REV
+RUN git clone https://github.com/nginx/nginx \
+        && TAG=$(git -C nginx tag | grep -o ^release-[0-9\.]* | sort -V | tail -n 1) \
+        && git -C nginx checkout tags/$TAG
 
 #Fetch additional modules
 WORKDIR /build/modules
