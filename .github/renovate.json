@@ -31,6 +31,15 @@
       "additionalBranchPrefix": "teamcity-agent-"
     },
     {
+      "matchFileNames": [
+        "openclaw/**"
+      ],
+      "labels": [
+        "openclaw"
+      ],
+      "additionalBranchPrefix": "openclaw-"
+    },
+    {
       "matchDatasources": [
         "docker"
       ],
