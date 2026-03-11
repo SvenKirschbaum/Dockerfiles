@@ -32,7 +32,8 @@
     },
     {
       "matchFileNames": [
-        "openclaw/**"
+        "openclaw/**",
+        "openclaw-node/**"
       ],
       "labels": [
         "openclaw"
