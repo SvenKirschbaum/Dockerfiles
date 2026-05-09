@@ -1,4 +1,4 @@
-FROM ghcr.io/openclaw/openclaw:2026.4.29@sha256:2c56a23cb2fe826a0d521bf6d61c8e4bb4e4201274f358eccddf5876393155ae
+FROM ghcr.io/openclaw/openclaw:2026.5.7@sha256:1af3f457a2d5a1d210f4d95634fa5da6e23f9c0ac7b52ef4bc38e2ecf09704fd
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
