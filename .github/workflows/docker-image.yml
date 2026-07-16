@@ -41,10 +41,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4
 
       - name: Compute Docker metadata
         id: meta
@@ -70,7 +70,7 @@ jobs:
           } >> "${GITHUB_OUTPUT}"
 
       - name: Build Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7
         with:
           context: ${{ inputs.context }}
           file: ${{ inputs.context }}/Dockerfile
@@ -80,7 +80,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
 
       - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@v0.36.0
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: ${{ steps.meta.outputs.primary_tag }}
           severity: HIGH,CRITICAL
@@ -89,7 +89,7 @@ jobs:
 
       - name: Log in to GitLab Container Registry
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-        uses: docker/login-action@v3
+        uses: docker/login-action@af1e73f918a031802d376d3c8bbc3fe56130a9b0 # v4
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ secrets.GITLAB_REGISTRY_USERNAME }}
