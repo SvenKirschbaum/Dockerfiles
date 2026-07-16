@@ -2,6 +2,11 @@
   "extends": [
     "github>fallobst22/renovate-config"
   ],
+  "pip_requirements": {
+    "managerFilePatterns": [
+      "/^paperless\\/constraints\\.txt$/"
+    ]
+  },
   "packageRules": [
     {
       "matchFileNames": [
