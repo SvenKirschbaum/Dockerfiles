@@ -23,6 +23,15 @@
     },
     {
       "matchFileNames": [
+        "paperless/**"
+      ],
+      "labels": [
+        "paperless"
+      ],
+      "additionalBranchPrefix": "paperless-"
+    },
+    {
+      "matchFileNames": [
         "teamcity-agent/**"
       ],
       "labels": [

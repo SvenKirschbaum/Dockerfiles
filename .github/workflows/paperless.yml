@@ -1,0 +1,29 @@
+name: Paperless Image
+
+on:
+  pull_request:
+    paths:
+      - paperless/**
+      - .github/workflows/paperless.yml
+      - .github/workflows/docker-image.yml
+  push:
+    branches:
+      - main
+    paths:
+      - paperless/**
+      - .github/workflows/paperless.yml
+      - .github/workflows/docker-image.yml
+  workflow_dispatch:
+
+jobs:
+  docker-image:
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/docker-image.yml
+    with:
+      image: paperless
+      context: paperless
+      version_offset: 0
+      push_latest: true
+    secrets: inherit
