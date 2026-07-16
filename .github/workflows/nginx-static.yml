@@ -1,0 +1,26 @@
+name: Nginx Static Image
+
+on:
+  pull_request:
+    paths:
+      - nginx-static/**
+      - .github/workflows/nginx-static.yml
+      - .github/workflows/docker-image.yml
+  push:
+    branches:
+      - main
+    paths:
+      - nginx-static/**
+      - .github/workflows/nginx-static.yml
+      - .github/workflows/docker-image.yml
+  workflow_dispatch:
+
+jobs:
+  docker-image:
+    uses: ./.github/workflows/docker-image.yml
+    with:
+      image: nginx-static
+      context: nginx-static
+      version_offset: 35
+      push_latest: true
+    secrets: inherit

@@ -1,0 +1,26 @@
+name: TeamCity Agent Image
+
+on:
+  pull_request:
+    paths:
+      - teamcity-agent/**
+      - .github/workflows/teamcity-agent.yml
+      - .github/workflows/docker-image.yml
+  push:
+    branches:
+      - main
+    paths:
+      - teamcity-agent/**
+      - .github/workflows/teamcity-agent.yml
+      - .github/workflows/docker-image.yml
+  workflow_dispatch:
+
+jobs:
+  docker-image:
+    uses: ./.github/workflows/docker-image.yml
+    with:
+      image: teamcity-agent
+      context: teamcity-agent
+      version_offset: 48
+      push_latest: true
+    secrets: inherit
