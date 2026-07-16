@@ -77,7 +77,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
 
       - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@v0.36.0
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: ${{ steps.meta.outputs.primary_tag }}
           severity: HIGH,CRITICAL
