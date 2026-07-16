@@ -1,0 +1,26 @@
+name: Keycloak Image
+
+on:
+  pull_request:
+    paths:
+      - keycloak/**
+      - .github/workflows/keycloak.yml
+      - .github/workflows/docker-image.yml
+  push:
+    branches:
+      - main
+    paths:
+      - keycloak/**
+      - .github/workflows/keycloak.yml
+      - .github/workflows/docker-image.yml
+  workflow_dispatch:
+
+jobs:
+  docker-image:
+    uses: ./.github/workflows/docker-image.yml
+    with:
+      image: keycloak
+      context: keycloak
+      version_offset: 66
+      push_latest: false
+    secrets: inherit
