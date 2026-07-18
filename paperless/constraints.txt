@@ -1,4 +1,4 @@
-Django==5.2.13
+Django==5.2.16
 Brotli==1.2.0
 PyJWT==2.13.0
 cryptography==49.0.0
