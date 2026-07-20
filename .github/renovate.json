@@ -7,6 +7,17 @@
       "/^paperless\\/constraints\\.txt$/"
     ]
   },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^smtprelay\\/Dockerfile$/"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+ARG SMTPRELAY_VERSION=(?<currentValue>\\S+)"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "matchFileNames": [
@@ -34,6 +45,15 @@
         "paperless"
       ],
       "additionalBranchPrefix": "paperless-"
+    },
+    {
+      "matchFileNames": [
+        "smtprelay/**"
+      ],
+      "labels": [
+        "smtprelay"
+      ],
+      "additionalBranchPrefix": "smtprelay-"
     },
     {
       "matchFileNames": [

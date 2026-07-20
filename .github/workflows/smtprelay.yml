@@ -1,0 +1,29 @@
+name: Smtprelay Image
+
+on:
+  pull_request:
+    paths:
+      - smtprelay/**
+      - .github/workflows/smtprelay.yml
+      - .github/workflows/docker-image.yml
+  push:
+    branches:
+      - main
+    paths:
+      - smtprelay/**
+      - .github/workflows/smtprelay.yml
+      - .github/workflows/docker-image.yml
+  workflow_dispatch:
+
+jobs:
+  docker-image:
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/docker-image.yml
+    with:
+      image: smtprelay
+      context: smtprelay
+      version_offset: 0
+      push_latest: true
+    secrets: inherit
