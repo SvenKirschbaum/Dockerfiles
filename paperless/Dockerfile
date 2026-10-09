@@ -1,4 +1,4 @@
-FROM ghcr.io/paperless-ngx/paperless-ngx:3.0.2@sha256:fef384c955d2ec2acf1bd0882ffc195ecc170266c803dfe28b79df6deabb3569
+FROM ghcr.io/paperless-ngx/paperless-ngx:3.3.0@sha256:6b94799bc769a063b3340cc5847402e626d4d91d29a295a8e747f8e9bead4207
 
 USER root
 
