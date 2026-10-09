@@ -66,13 +66,12 @@
     },
     {
       "matchFileNames": [
-        "openclaw/**",
-        "openclaw-node/**"
+        "hermes/**"
       ],
       "labels": [
-        "openclaw"
+        "hermes"
       ],
-      "additionalBranchPrefix": "openclaw-"
+      "additionalBranchPrefix": "hermes-"
     },
     {
       "matchDatasources": [
