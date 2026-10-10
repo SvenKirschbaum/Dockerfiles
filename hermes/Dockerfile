@@ -17,4 +17,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN npm install -g --allow-scripts=@googleworkspace/cli,@opencode/cli @opencode/cli @googleworkspace/cli
 
+RUN uv pip install -U piper-tts
+
 USER hermes
