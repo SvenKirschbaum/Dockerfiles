@@ -1,4 +1,4 @@
-FROM golang:1.27-alpine@sha256:fa3d596898d9f126af7c01d14ee7597bab3f39cccf392ef36b69fe77cd681f18 AS build
+FROM golang:1.27-alpine@sha256:eb61c3873c97416fff0116553fff65d67a3549f72e11d9758849a689cdd8b523 AS build
 
 RUN apk add --no-cache ca-certificates make git patch wget
 
@@ -28,7 +28,7 @@ RUN make build
 # sanity check - make sure the binary runs and is executable
 RUN bin/smtprelay --version
 
-FROM alpine:3.24@sha256:3f4d6b32e26703c6082839234f43769d5046b3ac7c910033911d1e71d8cd630a AS runtime
+FROM alpine:3.24@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf AS runtime
 
 RUN apk --no-cache upgrade zlib
 
